@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="89a7eaf9-49ba-4d36-8433-ac0d44b03f8b" name="DDL data source Mapping">
+      <data-sources db="06188a52-5170-476a-a553-fb2da3aee3e9" ddl="4ef088cd-31a0-4b92-bfd9-e319923f399b" />
+      <scope>
+        <node kind="database" qname="tsis">
+          <node kind="schema" qname="public" />
+        </node>
+      </scope>
+    </mapping>
+  </component>
   <component name="SqlDataSourceStorage">
     <option name="dataSources">
       <list>
