@@ -1,10 +1,10 @@
 create table supplier
 (
-    supplierid integer not null
+    supplierid serial
         primary key,
     firs_tname varchar,
-    address    varchar,
-    last_name  varchar
+    last_name  varchar,
+    address    varchar
 );
 
 alter table supplier

@@ -1,6 +1,6 @@
 create table driver
 (
-    driverid  integer not null
+    driverid  serial
         primary key,
     firstname varchar,
     lastname  varchar

@@ -1,6 +1,6 @@
 create table transactiontype
 (
-    transtypeid  integer not null
+    transtypeid  serial
         primary key,
     company_name varchar
 );

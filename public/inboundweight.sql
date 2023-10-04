@@ -1,12 +1,10 @@
 create table inboundweight
 (
-    inboundid      integer not null
+    inboundid      serial
         primary key,
-    inbound_weight numeric(10, 2),
-    userid         integer
-        references users,
-    transactionid  serial
-        references transaction
+    inbound_weight numeric,
+    userid         integer,
+    transactionid  integer
 );
 
 alter table inboundweight

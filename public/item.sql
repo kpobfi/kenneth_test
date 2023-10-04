@@ -1,6 +1,6 @@
 create table item
 (
-    itemid    integer not null
+    itemid    serial
         primary key,
     item_name varchar,
     uom       varchar

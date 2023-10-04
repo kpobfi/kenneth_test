@@ -1,6 +1,6 @@
 create table subtranstype
 (
-    subtranstypeid    integer not null
+    subtranstypeid    serial
         primary key,
     subtranstype_name varchar
 );

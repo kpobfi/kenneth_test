@@ -1,6 +1,6 @@
 create table users
 (
-    userid     integer not null
+    userid     serial
         primary key,
     fname      varchar,
     lname      varchar,
