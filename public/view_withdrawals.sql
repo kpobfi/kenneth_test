@@ -1,14 +1,15 @@
 create view view_withdrawals
-            (transactionid, quantity, transtypid, subtranstypeid, driverid, supplierid, itemid, plate_no, trans_date) as
+            (transactionid, transtypeid, subtranstypeid, trans_date, driverid, supplierid, itemid, quantity,
+             plate_no) as
 SELECT transaction.transactionid,
-       transaction.quantity,
-       transaction.transtypid,
+       transaction.transtypeid,
        transaction.subtranstypeid,
+       transaction.trans_date,
        transaction.driverid,
        transaction.supplierid,
        transaction.itemid,
-       transaction.plate_no,
-       transaction.trans_date
+       transaction.quantity,
+       transaction.plate_no
 FROM transaction
 WHERE transaction.subtranstypeid = 2;
 
