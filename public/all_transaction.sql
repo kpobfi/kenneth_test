@@ -21,8 +21,8 @@ SELECT transaction.transactionid,
 FROM supplier
          LEFT JOIN transaction ON supplier.supplierid = transaction.supplierid
          JOIN item ON item.itemid = transaction.itemid
-         FULL JOIN inboundweight i ON transaction.transactionid = i.transactionid
-         FULL JOIN outboundweight o ON transaction.transactionid = o.transactionid
+         JOIN inboundweight i ON transaction.transactionid = i.transactionid
+         JOIN outboundweight o ON transaction.transactionid = o.transactionid
          JOIN transactiontype t ON t.transtypeid = transaction.transtypeid
          JOIN subtranstype s ON transaction.subtranstypeid = s.subtranstypeid;
 

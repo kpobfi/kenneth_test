@@ -5,17 +5,18 @@ $$
 BEGIN
 
     IF EXISTS (
-        SELECT 1
+        SELECT transactionId
         FROM transaction
         WHERE transactionId = transaction_id
     ) THEN
-        RAISE EXCEPTION 'Cannot delete transaction.';
+        DELETE FROM inboundweight WHERE transactionid = transaction_id;
+        DELETE FROM outboundweight WHERE transactionid = transaction_id;
+        DELETE FROM transaction WHERE transactionid = transaction_id;
     ELSE
-        DELETE FROM transaction
-        WHERE transactionid = transaction_id;
+         RAISE EXCEPTION 'Transaction not found.';
     END IF;
-
-END;
+    COMMIT;
+END
 $$;
 
 alter procedure delete_transaction(integer) owner to postgres;
