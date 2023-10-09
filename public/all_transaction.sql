@@ -20,11 +20,11 @@ SELECT transaction.transactionid,
            END AS net_weight
 FROM supplier
          LEFT JOIN transaction ON supplier.supplierid = transaction.supplierid
-         JOIN item ON item.itemid = transaction.itemid
-         JOIN inboundweight i ON transaction.transactionid = i.transactionid
-         JOIN outboundweight o ON transaction.transactionid = o.transactionid
-         JOIN transactiontype t ON t.transtypeid = transaction.transtypeid
-         JOIN subtranstype s ON transaction.subtranstypeid = s.subtranstypeid;
+         LEFT JOIN item ON item.itemid = transaction.itemid
+         LEFT JOIN inboundweight i ON transaction.transactionid = i.transactionid
+         LEFT JOIN outboundweight o ON transaction.transactionid = o.transactionid
+         LEFT JOIN transactiontype t ON t.transtypeid = transaction.transtypeid
+         LEFT JOIN subtranstype s ON transaction.subtranstypeid = s.subtranstypeid;
 
 alter table all_transaction
     owner to postgres;
